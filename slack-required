@@ -1,0 +1,11 @@
+cxxlibs >= 6.0.8
+glib >= 1.2.10
+glib2 >= 2.12.12
+glibc-solibs >= 2.5
+libdv >= 1.0.0
+libjpeg >= 6b
+libpng >= 1.2.18
+libquicktime >= 1.0.0
+sdl >= 1.2.11
+svgalib >= 1.9.25
+zlib >= 1.2.3
