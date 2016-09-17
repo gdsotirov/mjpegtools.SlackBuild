@@ -1,3 +1,4 @@
+# Do not overrite -mcpu flag
 diff -N -U 3 -r mjpegtools-1.9.0-orig/configure mjpegtools-1.9.0/configure
 --- mjpegtools-1.9.0-orig/configure	2009-01-06 08:49:27.000000000 +0200
 +++ mjpegtools-1.9.0/configure	2010-01-07 13:17:30.000000000 +0200
@@ -34,3 +35,16 @@ diff -N -U 3 -r mjpegtools-1.9.0-orig/cpuinfo.sh mjpegtools-1.9.0/cpuinfo.sh
  fi
  
  do_cc()
+# Fix compile error with GCC 4.4 and above (see https://sourceforge.net/p/mjpeg/mailman/message/24922627/ )
+diff -urNad mjpegtools-1.9.0-orig/mplex/lpcmstrm_in.cpp mjpegtools-1.9.0/mplex/lpcmstrm_in.cpp
+--- mjpegtools-1.9.0-orig/mplex/lpcmstrm_in.cpp	2005-10-13 19:43:10.000000000 +0300
++++ mjpegtools-1.9.0/mplex/lpcmstrm_in.cpp	2016-09-17 16:35:41.000000000 +0300
+@@ -53,7 +53,7 @@
+ 
+ bool LPCMStream::Probe(IBitStream &bs )
+ {
+-    char *last_dot = strrchr( bs.StreamName(), '.' );
++    const char *last_dot = strrchr( bs.StreamName(), '.' );
+     return 
+         last_dot != NULL 
+         && strcmp( last_dot+1, "lpcm") == 0;
