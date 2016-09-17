@@ -4,12 +4,12 @@
 # Written by Georgi D. Sotirov <gdsotirov@dir.bg>
 #
 
-. ../slack-package.conf
+. ../../slack-package.conf
 
 NAME=mjpegtools
 VERSION=1.9.0
 ARCH=${ARCH:-i486}
-BUILD=1
+BUILD=${BUILD:-1}
 
 TMP=${TMP:-/tmp}
 CWD=${CWD:-`pwd`}
@@ -34,12 +34,12 @@ mkdir -p $PKG
 
 # Extract and fix source
 cd $TMP
-tar xzvf $CWD/$NAME-$VERSION.tar.gz
+tar -xvf $CWD/$NAME-$VERSION.tar.gz || exit 3
 cd $NAME-$VERSION
 fix_source
 
 # Apply patches
-patch -p1 < $CWD/$NAME-$VERSION.diff
+patch -p1 -b -z.orig < $CWD/$NAME-$VERSION.diff || exit 4
 
 # Configure
 CFLAGS=$SLKCFLAGS \
@@ -47,6 +47,7 @@ CXXFLAGS=$SLKCFLAGS \
 ./configure --build=$ARCH-slackware-linux \
             --host=$ARCH-slackware-linux \
             --prefix=/usr \
+            --libdir=/usr/lib${LIBDIRSUFFIX} \
             --sysconfdir=/etc \
             --localstatedir=/var \
             --mandir=/usr/man \
@@ -54,11 +55,11 @@ CXXFLAGS=$SLKCFLAGS \
             --enable-shared=yes \
             --enable-static=no \
             --enable-simd-accel \
-            --enable-zalpha || exit 1
+            --enable-zalpha || exit 5
 
 # Build & install
-make -j4 || exit 2
-make -e DESTDIR=$PKG install
+make -j4 || exit 6
+make -e DESTDIR=$PKG install || exit 7
 
 # Prepare
 bin_perms $PKG
