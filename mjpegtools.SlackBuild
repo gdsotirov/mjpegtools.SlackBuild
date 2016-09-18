@@ -17,13 +17,13 @@
 # along with this program; if not, write to the Free Software
 # Foundation, Inc., 51 Franklin Street, Fifth Floor, Boston, MA  02110-1301, USA.
 # 
-# $Id: mjpegtools.SlackBuild,v 1.4 2016/09/18 07:41:18 gsotirov Exp $
+# $Id: mjpegtools.SlackBuild,v 1.5 2016/09/18 11:06:50 gsotirov Exp $
 #
 
 . ../../slack-package.conf
 
 NAME=mjpegtools
-VERSION=2.0.0
+VERSION=2.1.0
 ARCH=${ARCH:-i486}
 BUILD=${BUILD:-1}
 
