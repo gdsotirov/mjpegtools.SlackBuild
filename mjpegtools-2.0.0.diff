@@ -1,0 +1,14 @@
+# Fix compile issue with y4mdenoise/MotionSearcher.hh with newer GCC
+# Wirtten by Georgi D. Sotirov <gdsotirov@dir.bg>
+diff -urNad mjpegtools-2.0.0-orig/y4mdenoise/MotionSearcher.hh mjpegtools-2.0.0/y4mdenoise/MotionSearcher.hh
+--- mjpegtools-2.0.0-orig/y4mdenoise/MotionSearcher.hh	2010-07-25 23:06:56.000000000 +0300
++++ mjpegtools-2.0.0/y4mdenoise/MotionSearcher.hh	2016-09-18 10:19:54.000000000 +0300
+@@ -2196,7 +2196,7 @@
+ 	{
+ 		// This region is too small to be bothered with.
+ 		// Just get rid of it.
+-		DeleteRegion (a_pRegion);
++		this->DeleteRegion (a_pRegion);
+ 	}
+ 	else
+ 	{
