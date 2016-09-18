@@ -1,11 +1,11 @@
-cxxlibs >= 6.0.17 | gcc-g++ >= 4.7.1
-gcc >= 4.7.1
+cxxlibs >= 6.0.18 | gcc-g++ >= 4.8.2
+gcc >= 4.8.2
 glib >= 1.2.10
-glib2 >= 2.32.4
-glibc-solibs >= 2.15
+glib2 >= 2.36.4
+glibc-solibs >= 2.17
 libdv >= 1.0.0
 libjpeg >= v8a
 libpng >= 1.4.12
 libquicktime >= 1.2.4
-sdl >= 1.2.14
-zlib >= 1.2.5
+sdl >= 1.2.15
+zlib >= 1.2.8
