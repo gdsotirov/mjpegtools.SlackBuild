@@ -1,11 +1,11 @@
 mjpegtools: MJPEG Tools (The MJPEG tools for Linux)
 mjpegtools:
 mjpegtools: Mjpeg tools is a suite of programs which support video capture,
-mjpegtools: editting, playback, and compression to MPEG of MJPEG video.
+mjpegtools: editing, playback, and compression to MPEG of MJPEG video.
 mjpegtools: Edit, play and compression software is hardware independent.
 mjpegtools: Capture supports MJPEG hardware (Buz, Miro DC10+ etc).
 mjpegtools:
 mjpegtools:
 mjpegtools:
-mjpegtools: Packaged by Georgi D. Sotirov <gdsotirov@dir.bg>
+mjpegtools: Packaged by Georgi D. Sotirov <gdsotirov@gmail.com>
 mjpegtools:
